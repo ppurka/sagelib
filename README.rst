@@ -19,7 +19,10 @@ First, you must install Sage_.
 
 Where ``$SAGE_ROOT`` denotes the directory where you have unpacked
 and/or built Sage, replace the symlink ``$SAGE_ROOT/devel/sage`` with
-one pointing to your local clone of this repository. Be aware that this
+one pointing to your local clone of this repository. (**Note**:
+Unfortunately there are currently some hard-coded relative paths, i.e.
+``..``, which cause problems when your local clone is not in
+``$SAGE_ROOT/devel/``, so please place it there.) Be aware that this
 repository is not the entirety of Sage; checking out old versions of the
 Sage library here is not sufficient to produce a vanilla old version of
 Sage, since you will still have newer components in other parts of the
@@ -76,7 +79,7 @@ The branches I am maintaining on this repository are as follows.
 
 `github-master`
   The default branch for this GitHub repository. It should consist of
-  `master` plus this README file. 
+  `master` plus this README file.
 
 Note that of the above, only `release` and `github-master` are really
 suitable for remote tracking, because the others will tend to rewind
