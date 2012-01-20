@@ -20,13 +20,13 @@ First, you must install Sage_.
 Where ``$SAGE_ROOT`` denotes the directory where you have unpacked
 and/or built Sage, replace the symlink ``$SAGE_ROOT/devel/sage`` with
 one pointing to your local clone of this repository. (**Note**:
-Unfortunately there are currently some hard-coded relative paths, i.e.
-``..``, which cause problems when your local clone is not in
-``$SAGE_ROOT/devel/``, so please place it there.) Be aware that this
-repository is not the entirety of Sage; checking out old versions of the
-Sage library here is not sufficient to produce a vanilla old version of
-Sage, since you will still have newer components in other parts of the
-Sage system.
+Unfortunately Sage currently expects the symlink to point to a directory
+whose path starts with ``$SAGE_ROOT/devel/sage-``, so for now please
+make sure your local clone is in the appropriate directory and has an
+appropriate name.) Be aware that this repository is not the entirety of
+Sage; checking out old versions of the Sage library here is not
+sufficient to produce a vanilla old version of Sage, since you will
+still have newer components in other parts of the Sage system.
 
 When working on this repository, base your topic branches on the
 prerelease branch. Don't submit pull requests (unless you want to modify
