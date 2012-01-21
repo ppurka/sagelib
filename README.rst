@@ -29,11 +29,11 @@ sufficient to produce a vanilla old version of Sage, since you will
 still have newer components in other parts of the Sage system.
 
 When working on this repository, base your topic branches on the
-prerelease branch. Don't submit pull requests (unless you want to modify
+`master` branch. Don't submit pull requests (unless you want to modify
 this README!), as this GitHub repository is only a mirror for now.
-Instead, post patches to trac_, along with a link to your topic branch on
-GitHub, when you're ready for your code to be reviewed. You will need an
-account on trac in order to do this.
+Instead, post patches to trac_, along with a link to your topic branch
+on GitHub, when you're ready for your code to be reviewed. You will need
+an account on trac in order to do this.
 
 Your patches should be in Mercurial ``hg export`` format. There is
 a tool which can convert ``git format-patch`` output to this format,
@@ -59,12 +59,13 @@ The branches I am maintaining on this repository are as follows.
   This branch tracks the tip of the Mercurial repository distributed
   with the latest stable release version of Sage.
 
-`prerelease`
+`master`
   This branch tracks the tip of the Mercurial repository distributed
-  with the latest development version of Sage. Please base topic
-  branches on this branch if you intend to submit patches (Sage does not
-  currently use GitHub or even git for that matter, so submitting pull
-  requests will get you nowhere, unfortunately.)
+  with the latest development version or release version of Sage,
+  whichever is newer. Please base topic branches on this branch if you
+  intend to submit patches (Sage does not currently use GitHub or even
+  git for that matter, so submitting pull requests will get you nowhere,
+  unfortunately.)
 
 `prerelease-x.x.x.x`
   These branches track the tips of the Mercurial repositories
@@ -72,20 +73,18 @@ The branches I am maintaining on this repository are as follows.
   release versions actually get merged into `master`, so these branches
   are kept around for your convenience (for example if you want to
   rebase a topic branch from one of these prerelease branches onto the
-  current `prerelease` branch).
-
-`master`
-  This points to the latest release or prerelease.
+  current `master` branch).
 
 `github-master`
   The default branch for this GitHub repository. It should consist of
   `master` plus this README file.
 
-Note that of the above, only `release` and `github-master` are really
-suitable for remote tracking, because the others will tend to rewind
-themselves often (due to the way that release management of Sage is
-currently done). Nevertheless, please base topic branches on
-`prerelease`.
+Note that of the above, only `release` is really suitable for remote
+tracking, because due to the way that release management of Sage is
+currently done, `master` will jump around the DAG, `prerelease-x.x.x.x`
+will never be updated, and `github-master` will be rebased in order to
+avoid depending upon `prerelease-x.x.x.x` branches. Nevertheless, please
+base topic branches on `master`, not `release`, and rebase as necessary.
 
 Maintainer
 ----------
